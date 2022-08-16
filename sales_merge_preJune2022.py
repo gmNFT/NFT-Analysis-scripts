@@ -14,6 +14,7 @@ import os
 from_zone = tz.tzutc()
 to_zone = tz.tzlocal()
 # ------------------------------------------------------------ #
+# specifiy variables for filtering the data
 ppm_limit = .08
 ash_ppm_limit = 15
 merge_limit = 3
@@ -30,11 +31,6 @@ headers = {"X-API-KEY": opensea_api_key}
 # You need occured_before and catch created_date from response json
 
 for i in range(0, 2):
-    # querystring = {"asset_contract_address": contract, 
-    #                "event_type": "created",
-    #                "only_opensea": "true",
-    #                "offset":i*50,
-    #                "limit":"50"}
     querystring = {"asset_contract_address": contract, 
                    "event_type": "created",
                    "only_opensea": "true"}
